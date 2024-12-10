@@ -6,7 +6,7 @@ public class ReoveArrayDuplicate{
     }
 
     public static void check(int []a){
-        // Set<Integer> set = new LinkedHashSet<>();//remove duplicates and print in order as array
+    
          Set<Integer> set = new TreeSet<>();//remove duplicates and print in asc order
         for(int i: a){
             set.add(i);

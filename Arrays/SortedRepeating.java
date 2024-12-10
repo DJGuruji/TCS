@@ -1,6 +1,6 @@
 public class SortedRepeating{
     public static void main(String[] args) {
-        int []a ={1,2,3,4,5,5,6};
+        int []a ={1,2,2,3,4,5,5,6};
         check(a);
 
             }

@@ -16,7 +16,7 @@ public class RemoveDuplicate {
             }
         }
 
-        
+     
         for (int i = 0; i < index; i++) {
             System.out.println(b[i]);
         }
