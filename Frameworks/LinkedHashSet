@@ -1,0 +1,68 @@
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetFunctionsExample {
+    public static void main(String[] args) {
+        LinkedHashSet<Integer> set = new LinkedHashSet<>();
+
+        // 1. Add elements to the set
+        set.add(1); // Adds an element to the set
+        set.add(2);
+        set.add(3);
+        System.out.println("Set: " + set); // Output: [1, 2, 3]
+
+        // 2. Remove an element
+        set.remove(2); // Removes the specified element
+        System.out.println("After removing 2: " + set); // Output: [1, 3]
+
+        // 3. Check if an element exists
+        boolean contains = set.contains(1); // Returns true if the element exists
+        System.out.println("Set contains 1: " + contains); // Output: true
+
+        // 4. Get the size of the set
+        int size = set.size(); // Returns the number of elements in the set
+        System.out.println("Size of set: " + size); // Output: 2
+
+        // 5. Check if the set is empty
+        boolean isEmpty = set.isEmpty(); // Returns true if the set has no elements
+        System.out.println("Is the set empty? " + isEmpty); // Output: false
+
+        // 6. Clear all elements in the set
+        set.clear(); // Removes all elements from the set
+        System.out.println("Set after clearing: " + set); // Output: []
+
+        // 7. Add multiple elements
+        set.add(10);
+        set.add(20);
+        set.add(30);
+
+        // 8. Iterate over the elements
+        System.out.println("Iterating over set:");
+        for (Integer num : set) {
+            System.out.println(num); // Outputs elements in insertion order: 10, 20, 30
+        }
+
+        // 9. Create a copy of the set
+        LinkedHashSet<Integer> copySet = new LinkedHashSet<>(set); // Copies all elements to a new set
+        System.out.println("Copied Set: " + copySet); // Output: [10, 20, 30]
+
+        // 10. Retain only common elements between two sets
+        LinkedHashSet<Integer> anotherSet = new LinkedHashSet<>();
+        anotherSet.add(20);
+        anotherSet.add(40);
+        set.retainAll(anotherSet); // Keeps only elements that are in both sets
+        System.out.println("Set after retaining common elements: " + set); // Output: [20]
+
+        // 11. Remove all elements present in another set
+        set.add(10); // Adding elements back
+        set.add(30);
+        set.removeAll(anotherSet); // Removes elements in `anotherSet` from `set`
+        System.out.println("Set after removing elements of anotherSet: " + set); // Output: [10, 30]
+
+        // 12. Convert set to an array
+        Object[] array = set.toArray(); // Converts the set to an array
+        System.out.println("Array from set:");
+        for (Object obj : array) {
+            System.out.println(obj); // Outputs 10 and 30
+        }
+    }
+}

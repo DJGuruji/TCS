@@ -1,0 +1,76 @@
+// Create a LinkedList
+		LinkedList<String>  linkedList = new LinkedList<>();
+
+		// Adding elements to the end
+		linkedList.add("Apple");
+		linkedList.add("Banana");
+		linkedList.add("Cherry");
+
+		// Adding elements at the beginning
+		linkedList.addFirst("Orange");
+
+		// Adding elements at a specific index
+		linkedList.add(2, "Grapes");
+
+		l
+		// Printing the LinkedList
+		System.out.println("LinkedList: " + linkedList);
+
+		// Accessing elements by index
+		String fruit = linkedList.get(0);
+		System.out.println("Fruit at index 1: " + fruit);
+
+		// Removing elements by value
+		linkedList.remove("Banana");
+
+		//Remove first element
+		likedList.remove();
+
+		//remove last element
+		linkedList.removeLast();
+
+		// Removing elements by index
+		linkedList.remove(3);
+
+		// Printing the modified LinkedList
+		System.out.println("Modified LinkedList: " + linkedList);
+
+		// Checking if a value exists in the LinkedList
+		boolean containsOrange = linkedList.contains("Orange");
+		System.out.println("Contains Orange? " + containsOrange);
+
+		// Getting the size of the LinkedList
+		int size = linkedList.size();
+		System.out.println("Size of the LinkedList: " + size);
+	
+
+    list.sort(Comparator.reverseOrder());
+        
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i) + " ");
+        }
+        
+       Collections.reverse(list);
+         for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i) + " ");
+        }
+
+
+
+
+Collections.sort(list);
+list.sort(null);
+
+
+Collections.sort(list, Comparator.reverseOrder());
+
+
+//creating new linkedlist by dding elements of two ll alternatively
+
+
+while(i< list1.size() && j < list2.size()){
+    list3.add(list1.get(i))
+    list3.add(list2.get(i));
+    i++
+    j++
+}

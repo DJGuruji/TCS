@@ -1,0 +1,67 @@
+import java.util.*;
+
+public class HashMap {
+    public static void main(String[] args) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        // 1. Add key-value pairs
+        map.put(1, 100); // Adds a key-value pair to the map
+
+        // 2. Get a value by key
+        Integer value = map.get(1); // Returns the value for the given key, or null if not found
+
+        // 3. Remove a key-value pair
+        map.remove(1); // Removes the key-value pair for the given key
+
+        // 4. Check if a key exists
+        boolean keyExists = map.containsKey(1); // Checks if the map contains the key
+
+        // 5. Check if a value exists
+        boolean valueExists = map.containsValue(100); // Checks if the map contains the value
+
+        // 6. Get the size of the map
+        int size = map.size(); // Returns the number of key-value pairs
+
+        // 7. Check if the map is empty
+        boolean isEmpty = map.isEmpty(); // Returns true if the map has no entries
+
+        // 8. Clear all entries in the map
+        map.clear(); // Removes all key-value pairs
+
+        // 9. Add all entries from another map
+        HashMap<Integer, Integer> anotherMap = new HashMap<>();
+        anotherMap.put(2, 200);
+        map.putAll(anotherMap); // Copies all entries from another map
+
+        // 10. Replace the value for a specific key
+        map.replace(2, 300); // Replaces the value for the given key
+        map.replace(2, 300, 400); // Replaces the value only if it matches the old value
+
+        // 11. Get a default value if key not found
+        int defaultValue = map.getOrDefault(3, 0); // Returns default value if key not present
+
+        // 12. Get all keys as a set
+        Set<Integer> keys = map.keySet(); // Returns a set of all keys
+
+        // 13. Get all values as a collection
+        Collection<Integer> values = map.values(); // Returns a collection of all values
+
+        // 14. Get all key-value pairs as a set
+        Set<Map.Entry<Integer, Integer>> entries = map.entrySet(); // Returns a set of entries
+
+        // 15. Compute a new value for a key
+        map.compute(2, (key, val) -> (val == null) ? 100 : val + 100); // Updates value based on key
+
+        // 16. Compute a value if the key is absent
+        map.computeIfAbsent(3, key -> 300); // Adds a value if the key is not already mapped
+
+        // 17. Compute a value if the key is present
+        map.computeIfPresent(2, (key, val) -> val + 50); // Updates value only if key exists
+
+        // 18. Merge a value with the existing value
+        map.merge(2, 50, Integer::sum); // Merges new value with existing value
+
+        // 19. Perform an action for each key-value pair
+        map.forEach((key, val) -> System.out.println(key + " -> " + val)); // Iterates over the map
+    }
+}

@@ -1,0 +1,72 @@
+import java.util.*;
+
+public class HashSetFunctionsExample {
+    public static void main(String[] args) {
+        // 1. Create a HashSet
+        HashSet<Integer> hashSet = new HashSet<>();
+
+        // 2. Add elements to the HashSet
+        hashSet.add(10);
+        hashSet.add(20);
+        hashSet.add(30);
+        hashSet.add(10); // Duplicate, won't be added
+        System.out.println("HashSet after adding elements: " + hashSet); // Output: [20, 10, 30] (unordered)
+
+        // 3. Remove an element from the HashSet
+        hashSet.remove(20);
+        System.out.println("HashSet after removing 20: " + hashSet); // Output: [10, 30]
+
+        // 4. Check if an element exists
+        boolean contains = hashSet.contains(10);
+        System.out.println("Does HashSet contain 10? " + contains); // Output: true
+
+        // 5. Get the size of the HashSet
+        int size = hashSet.size();
+        System.out.println("Size of HashSet: " + size); // Output: 2
+
+        // 6. Check if the HashSet is empty
+        boolean isEmpty = hashSet.isEmpty();
+        System.out.println("Is HashSet empty? " + isEmpty); // Output: false
+
+        // 7. Iterate over elements in HashSet
+        System.out.println("Iterating over HashSet elements:");
+        for (Integer num : hashSet) {
+            System.out.println(num); // Outputs: 10, 30 (order not guaranteed)
+        }
+
+        // 8. Convert HashSet to an Array
+        Object[] array = hashSet.toArray();
+        System.out.println("HashSet as an Array: " + Arrays.toString(array)); // Output: [10, 30]
+
+        // 9. Add all elements from another collection
+        HashSet<Integer> anotherSet = new HashSet<>();
+        anotherSet.add(40);
+        anotherSet.add(50);
+        hashSet.addAll(anotherSet);
+        System.out.println("HashSet after adding all from anotherSet: " + hashSet); // Output: [50, 40, 10, 30]
+
+        // 10. Remove all elements in another collection
+        hashSet.removeAll(anotherSet);
+        System.out.println("HashSet after removing all from anotherSet: " + hashSet); // Output: [10, 30]
+
+        // 11. Retain only common elements between sets
+        anotherSet.add(30);
+        hashSet.retainAll(anotherSet);
+        System.out.println("HashSet after retaining common elements: " + hashSet); // Output: [30]
+
+        // 12. Clear the HashSet
+        hashSet.clear();
+        System.out.println("HashSet after clearing: " + hashSet); // Output: []
+
+        // 13. Check for equality with another HashSet
+        HashSet<Integer> set1 = new HashSet<>(Arrays.asList(1, 2, 3));
+        HashSet<Integer> set2 = new HashSet<>(Arrays.asList(1, 2, 3));
+        System.out.println("Are set1 and set2 equal? " + set1.equals(set2)); // Output: true
+
+        // 14. HashSet with initial capacity and load factor
+        HashSet<String> customSet = new HashSet<>(16, 0.75f);
+        customSet.add("A");
+        customSet.add("B");
+        System.out.println("Custom HashSet: " + customSet); // Output: [A, B]
+    }
+}

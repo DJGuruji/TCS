@@ -1,0 +1,86 @@
+import java.util.TreeSet;
+
+public class TreeSetFunctionsExample {
+    public static void main(String[] args) {
+        TreeSet<Integer> treeSet = new TreeSet<>();
+
+        // 1. Add elements to the set
+        treeSet.add(10);
+        treeSet.add(20);
+        treeSet.add(5);
+        treeSet.add(15);
+        System.out.println("TreeSet: " + treeSet); // Output: [5, 10, 15, 20] (sorted order)
+
+        // 2. Remove an element
+        treeSet.remove(10); // Removes the specified element
+        System.out.println("After removing 10: " + treeSet); // Output: [5, 15, 20]
+
+        // 3. Check if an element exists
+        boolean contains = treeSet.contains(15); // Returns true if the element exists
+        System.out.println("TreeSet contains 15: " + contains); // Output: true
+
+        // 4. Get the size of the set
+        int size = treeSet.size(); // Returns the number of elements in the set
+        System.out.println("Size of TreeSet: " + size); // Output: 3
+
+        // 5. Check if the set is empty
+        boolean isEmpty = treeSet.isEmpty(); // Returns true if the set is empty
+        System.out.println("Is TreeSet empty? " + isEmpty); // Output: false
+
+        // 6. Iterate over the elements
+        System.out.println("Iterating over TreeSet:");
+        for (Integer num : treeSet) {
+            System.out.println(num); // Outputs: 5, 15, 20
+        }
+
+        // 7. Get the first (lowest) element
+        int first = treeSet.first(); // Returns the smallest element
+        System.out.println("First element: " + first); // Output: 5
+
+        // 8. Get the last (highest) element
+        int last = treeSet.last(); // Returns the largest element
+        System.out.println("Last element: " + last); // Output: 20
+
+        // 9. Get a subset (inclusive of start, exclusive of end)
+        TreeSet<Integer> subSet = new TreeSet<>(treeSet.subSet(5, 20)); // Range [5, 20)
+        System.out.println("Subset (5 to 20): " + subSet); // Output: [5, 15]
+
+        // 10. Get a headSet (elements less than a given value)
+        TreeSet<Integer> headSet = new TreeSet<>(treeSet.headSet(15)); // Elements < 15
+        System.out.println("HeadSet (<15): " + headSet); // Output: [5]
+
+        // 11. Get a tailSet (elements greater than or equal to a given value)
+        TreeSet<Integer> tailSet = new TreeSet<>(treeSet.tailSet(15)); // Elements >= 15
+        System.out.println("TailSet (>=15): " + tailSet); // Output: [15, 20]
+
+        // 12. Get the ceiling (smallest element >= a given value)
+        int ceiling = treeSet.ceiling(16); // Finds the smallest element >= 16
+        System.out.println("Ceiling of 16: " + ceiling); // Output: 20
+
+        // 13. Get the floor (largest element <= a given value)
+        int floor = treeSet.floor(16); // Finds the largest element <= 16
+        System.out.println("Floor of 16: " + floor); // Output: 15
+
+        // 14. Get the higher (strictly greater element)
+        int higher = treeSet.higher(15); // Finds the smallest element > 15
+        System.out.println("Higher than 15: " + higher); // Output: 20
+
+        // 15. Get the lower (strictly smaller element)
+        int lower = treeSet.lower(15); // Finds the largest element < 15
+        System.out.println("Lower than 15: " + lower); // Output: 5
+
+        // 16. Poll the first element (retrieve and remove it)
+        int pollFirst = treeSet.pollFirst(); // Retrieves and removes the first element
+        System.out.println("Polled first element: " + pollFirst); // Output: 5
+        System.out.println("TreeSet after polling first: " + treeSet); // Output: [15, 20]
+
+        // 17. Poll the last element (retrieve and remove it)
+        int pollLast = treeSet.pollLast(); // Retrieves and removes the last element
+        System.out.println("Polled last element: " + pollLast); // Output: 20
+        System.out.println("TreeSet after polling last: " + treeSet); // Output: [15]
+
+        // 18. Clear the set
+        treeSet.clear(); // Removes all elements from the set
+        System.out.println("TreeSet after clearing: " + treeSet); // Output: []
+    }
+}

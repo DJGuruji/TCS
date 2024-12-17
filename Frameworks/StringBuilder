@@ -1,0 +1,63 @@
+public class StringBuilderFunctionsExample {
+    public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder("Hello");
+
+        // 1. Append a string or other data types
+        sb.append(" World"); // Appends a string to the existing sequence
+        sb.append(123); // Appends a number
+        System.out.println(sb); // Output: "Hello World123"
+
+        // 2. Insert a string or data at a specific index
+        sb.insert(5, " Java"); // Inserts " Java" at index 5
+        System.out.println(sb); // Output: "Hello Java World123"
+
+        // 3. Replace characters within a specified range
+        sb.replace(6, 10, "Python"); // Replaces "Java" with "Python"
+        System.out.println(sb); // Output: "Hello Python World123"
+
+        // 4. Delete characters within a specified range
+        sb.delete(6, 12); // Deletes characters from index 6 to 12
+        System.out.println(sb); // Output: "Hello World123"
+
+        // 5. Delete a specific character
+        sb.deleteCharAt(5); // Deletes the character at index 5
+        System.out.println(sb); // Output: "HelloWorld123"
+
+        // 6. Reverse the entire sequence
+        sb.reverse(); // Reverses the sequence
+        System.out.println(sb); // Output: "321dlroWolleH"
+        sb.reverse(); // Reverse back to original
+
+        // 7. Set the character at a specific index
+        sb.setCharAt(5, ' '); // Sets the character at index 5 to a space
+        System.out.println(sb); // Output: "Hello World123"
+
+        // 8. Get the character at a specific index
+        char ch = sb.charAt(1); // Returns the character at index 1
+        System.out.println("Character at index 1: " + ch); // Output: "e"
+
+        // 9. Get a substring from the sequence
+        String sub = sb.substring(6, 11); // Extracts a substring from index 6 to 11
+        System.out.println("Substring: " + sub); // Output: "World"
+
+        // 10. Get the length of the sequence
+        int length = sb.length(); // Returns the length of the sequence
+        System.out.println("Length: " + length); // Output: 14
+
+        // 11. Get the capacity of the StringBuilder
+        int capacity = sb.capacity(); // Returns the current capacity of the StringBuilder
+        System.out.println("Capacity: " + capacity);
+
+        // 12. Ensure the capacity is at least a certain value
+        sb.ensureCapacity(50); // Ensures the capacity is at least 50
+        System.out.println("New Capacity: " + sb.capacity()); // Output: 50 (or higher)
+
+        // 13. Trim the capacity to the current length
+        sb.trimToSize(); // Reduces the capacity to match the length
+        System.out.println("Trimmed Capacity: " + sb.capacity());
+
+        // 14. Set a new length for the sequence
+        sb.setLength(5); // Truncates or pads the sequence to the specified length
+        System.out.println(sb); // Output: "Hello"
+    }
+}

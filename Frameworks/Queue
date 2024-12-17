@@ -1,0 +1,18 @@
+Queue<Integer> queue = new LinkedList<>();
+        
+        // Add elements to the queue
+        queue.add(10);
+        queue.add(20);
+        queue.add(30);
+        
+        System.out.println("Queue after adds: " + queue);  // [10, 20, 30]
+        
+        // Peek at the head element
+        System.out.println("Head element: " + queue.peek());  // 10
+        
+        // Remove the head element
+        System.out.println("Removed element: " + queue.poll());  // 10
+        
+        // Check if the queue is empty
+        System.out.println("Is queue empty? " + queue.isEmpty());  // false
+    
