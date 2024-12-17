@@ -1,0 +1,95 @@
+// 1. length() - Returns the length of a string.
+String str = "Hello";
+System.out.println(str.length()); // Output: 5
+
+// 2. charAt(int index) - Returns the character at the specified index.
+System.out.println(str.charAt(1)); // Output: e
+
+// 3. substring(int beginIndex) - Returns a substring starting from the specified index to the end of the string.
+System.out.println(str.substring(2)); // Output: llo
+
+// 4. substring(int beginIndex, int endIndex) - Returns a substring from beginIndex to endIndex - 1.
+System.out.println(str.substring(1, 4)); // Output: ell
+
+// 5. indexOf(String str) - Returns the index of the first occurrence of the specified substring, or -1 if it doesn't exist.
+System.out.println(str.indexOf("World")); // Output: -1
+
+// 6. lastIndexOf(String str) - Returns the index of the last occurrence of the specified substring.
+System.out.println(str.lastIndexOf("o")); // Output: 4
+
+// 7. equals(Object obj) - Compares two strings for equality (case-sensitive).
+String str1 = "Hello";
+String str2 = "hello";
+System.out.println(str1.equals(str2)); // Output: false
+
+// 8. equalsIgnoreCase(String anotherString) - Compares two strings for equality, ignoring case differences.
+System.out.println(str1.equalsIgnoreCase(str2)); // Output: true
+
+// 9. toLowerCase() - Converts all characters in the string to lowercase.
+System.out.println(str.toLowerCase()); // Output: hello
+
+// 10. toUpperCase() - Converts all characters in the string to uppercase.
+System.out.println(str.toUpperCase()); // Output: HELLO
+
+// 11. trim() - Removes leading and trailing whitespace from the string.
+String str3 = "   Hello   ";
+System.out.println(str3.trim()); // Output: Hello
+
+// 12. replace(char oldChar, char newChar) - Replaces all occurrences of a character with another character.
+System.out.println(str.replace('l', 'x')); // Output: Hexxo
+
+// 13. replaceAll(String regex, String replacement) - Replaces all substrings that match the regular expression with the specified replacement.
+String str4 = "Hello 123 World!";
+System.out.println(str4.replaceAll("\\d", "#")); // Output: Hello ### World!
+
+// 14. split(String regex) - Splits the string into an array of substrings based on the specified delimiter.
+String str5 = "apple,banana,orange";
+String[] fruits = str5.split(",");
+for (String fruit : fruits) {
+    System.out.println(fruit);
+}
+// Output: 
+// apple
+// banana
+// orange
+
+// 15. contains(CharSequence sequence) - Checks if the string contains the specified sequence of characters.
+System.out.println(str.contains("World")); // Output: false
+
+// 16. startsWith(String prefix) - Checks if the string starts with the specified prefix.
+System.out.println(str.startsWith("Hello")); // Output: true
+
+// 17. endsWith(String suffix) - Checks if the string ends with the specified suffix.
+System.out.println(str.endsWith("World!")); // Output: false
+
+// 18. isEmpty() - Checks if the string is empty (i.e., has a length of 0).
+String str6 = "";
+System.out.println(str6.isEmpty()); // Output: true
+
+// 19. valueOf(boolean b) - Converts a boolean value to a string.
+boolean flag = true;
+System.out.println(String.valueOf(flag)); // Output: true
+
+// 20. concat(String str) - Concatenates the specified string to the end of the current string.
+System.out.println(str.concat(", World!")); // Output: Hello, World!
+
+// 21. matches(String regex) - Checks if the string matches the given regular expression.
+String str7 = "12345";
+System.out.println(str7.matches("\\d+")); // Output: true (matches a string of digits)
+
+// 22. hashCode() - Returns a hash code for the string.
+System.out.println(str.hashCode()); // Output: A unique hash code number
+
+// 23. compareTo(String anotherString) - Compares two strings lexicographically.
+String str8 = "apple";
+String str9 = "banana";
+System.out.println(str8.compareTo(str9)); // Output: negative value (because "apple" < "banana")
+
+// 24. compareToIgnoreCase(String anotherString) - Compares two strings lexicographically, ignoring case differences.
+String str10 = "apple";
+String str11 = "Apple";
+System.out.println(str10.compareToIgnoreCase(str11)); // Output: 0 (because they are the same ignoring case)
+
+// 25. join(CharSequence delimiter, CharSequence... elements) - Joins multiple elements into a single string, separated by the specified delimiter.
+String str12 = String.join(", ", "apple", "banana", "cherry");
+System.out.println(str12); // Output: apple, banana, cherry
